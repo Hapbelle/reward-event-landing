@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+
+  <title>아벤트참여</title>
+</head>
+<body >
+  <div id="index" class="index">
+     <div class="wrap">
+      <header class="header">
+
+        <nav class="nav" aria-label="상단 내비게이션">
+            <ul class="nav__list">
+                <!-- 뒤로가기 -->
+                <li class="nav__left">
+                    <a class="nav__back" href="notice.html" aria-label="뒤로가기">
+                    <img class="nav__icon" src="imgs/chevron-left.svg" alt="" />
+                    </a>
+                </li>
+
+                <!-- 타이틀 -->
+                <li class="nav__center">
+                <p class="nav__title">SHOPPING +</p>
+                </li>
+
+                <!-- 우측 여백(아이콘 자리/공백) -->
+                <li class="nav__right" aria-hidden="true">
+                <span class="nav__spacer"></span>
+                </li>
+            </ul>
+        </nav>
+      </header>
+      <main class="content event-content" id="content">
+<section class="event-hero" aria-labelledby="eventHeroTitle">
+  <p class="event-hero__title" id="eventHeroTitle">
+    걷기만 해도<br /><strong>최대 3천만 원 응모</strong> 기회!
+  </p>
+
+  <p class="event-hero__desc">겸사겸사 가입하면 응모할 수 있어요.</p>
+  <div class="event-hero__visual" aria-hidden="true">
+    <img class="event-hero__bg" src="imgs/bg.png" alt="" />
+    <img class="event-hero__obj event-hero__obj--ticket" src="imgs/main2.png" alt="" />
+     <span class="event-hero__shoe-shadow"></span>
+    <img class="event-hero__obj event-hero__obj--shoe" src="imgs/main1.png" alt="" />
+  </div>
+
+    <p class="event-hero__text">걸을수록 쌓이는 로또 응모권.<br />
+    <strong>리워드 참여하면 캐시 적립</strong>까지!<br />걷고, 참여하고, 모두 챙기세요
+    </p>
+</section>
+
+
+<section class="event-steps" aria-labelledby="eventStepsTitle">
+  <div class="event-steps__head">
+    <h2 class="event-steps__title" id="eventStepsTitle">이벤트 참여 방법</h2>
+  </div>
+
+  <div class="event-steps__box">
+    <ol class="event-steps__list">
+      <li class="event-steps__item">
+        <div class="event-steps__icon">
+          <img class="event-steps__img event-steps__img--phone" src="imgs/step1.png" alt="" />
+        </div>
+
+        <div class="event-steps__body">
+          <p class="event-steps__label">step 01</p>
+          <p class="event-steps__name">이벤트 참여하기</p>
+          <p class="event-steps__desc">
+            휴대폰 번호를 입력한 후 참여하기 버튼을 터치하세요.
+          </p>
+        </div>
+      </li>
+
+      <li class="event-steps__item">
+        <div class="event-steps__icon">
+          <img class="event-steps__img event-steps__img--join" src="imgs/step2.png" alt="" />
+        </div>
+
+        <div class="event-steps__body">
+          <p class="event-steps__label">step 02</p>
+          <p class="event-steps__name">겸사겸사 간편 회원가입하기</p>
+          <p class="event-steps__desc">
+            앱설치 후 간편 회원가입을 완료하세요!
+          </p>
+        </div>
+      </li>
+
+      <li class="event-steps__item">
+        <div class="event-steps__icon">
+          <img class="event-steps__img event-steps__img--ticket" src="imgs/main2.png" alt="" />
+        </div>
+
+        <div class="event-steps__body">
+          <p class="event-steps__label">step 03</p>
+          <p class="event-steps__name">응모권 10장 응모하기</p>
+          <p class="event-steps__desc">
+            회원가입 리워드로 받은 응모권 10장을 응모하면 자동으로 리워드가 지급됩니다.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+  </div>
+      <p class="event-steps__notice">
+      리워드 신청 때 입력한 휴대폰 번호로 가입해야 합니다.
+    </p>
+</section>
+
+<section class="event-phone" aria-labelledby="eventPhoneTitle">
+  <div class="event-phone__head">
+    <h2 class="event-phone__title" id="eventPhoneTitle">
+      고객님의 리워드 지급을 위한<br />
+      휴대폰 번호 입력이 필요합니다.
+    </h2>
+
+    <p class="event-phone__desc">
+      번호 입력 후 24시간 이내에 응모권 10장 응모를 완료하면 리워드가 지급됩니다.
+    </p>
+  </div>
+
+  <form class="event-phone__form" action="#" method="post">
+    <label class="event-phone__label" for="phoneNumber">휴대폰 번호</label>
+
+    <div class="event-phone__input-box">
+      <input
+        class="event-phone__input"
+        type="tel"
+        id="phoneNumber"
+        name="phoneNumber"
+        inputmode="numeric"
+        autocomplete="tel"
+        maxlength="13"
+        placeholder="010-1234-5678"
+      />
+    </div>
+  </form>
+</section>
+
+<section class="event-privacy" aria-labelledby="eventPrivacyTitle">
+  <div class="event-privacy__head">
+    <h2 class="event-privacy__title" id="eventPrivacyTitle">
+      개인정보 수집·이용 동의서 (필수)
+    </h2>
+
+    <p class="event-privacy__sub">(겸사겸사 신규 가입 이벤트)</p>
+
+    <p class="event-privacy__desc">
+      주식회사 핀크럭스에서 진행하는 “겸사겸사 회원가입 이벤트” 참여를 위해
+      참여자의 개인정보를 수집·이용하고자 하는 경우, 「개인정보보호법」 및 관련
+      법령에 따라 본인의 동의가 필요합니다.
+    </p>
+  </div>
+
+  <div class="event-privacy__info">
+    <p class="event-privacy__info-title">수집·이용에 관한 사항</p>
+
+    <dl class="event-privacy__list">
+      <div class="event-privacy__row">
+        <dt>· 수집·이용 목적</dt>
+        <dd>: 신규 회원가입 이벤트 리워드 지급 및 CS처리</dd>
+      </div>
+
+      <div class="event-privacy__row">
+        <dt>· 수집·이용 항목</dt>
+        <dd>: 참여자의 휴대폰 번호</dd>
+      </div>
+
+      <div class="event-privacy__row">
+        <dt>· 보유 및 이용 기간</dt>
+        <dd>
+          : <strong>개인정보 수집일로부터 1개월</strong>
+        </dd>
+      </div>
+
+      <div class="event-privacy__row event-privacy__row--top">
+        <dt>· 거부 권리 및 불이익</dt>
+        <dd>
+          : 귀하는 개인정보 수집·이용 동의를 거부하실 권리가 있으나,
+            동의를 거부하시는 경우 이벤트 참여가 제한됩니다.
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="event-privacy__agree">
+    <input
+      class="event-privacy__checkbox"
+      type="checkbox"
+      id="privacyAgree"
+      name="privacyAgree"
+    />
+
+    <label class="event-privacy__agree-label" for="privacyAgree">
+      <span class="event-privacy__check" aria-hidden="true"></span>
+      <span class="event-privacy__agree-text">
+        위 개인정보 수집·이용에 동의하십니까? (필수)
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="event-guide" aria-labelledby="eventGuideTitle">
+  <div class="event-guide__inner">
+    <h2 class="event-guide__title" id="eventGuideTitle">
+      이벤트 참여 방법 및 유의사항 안내
+    </h2>
+
+    <ol class="event-guide__main-list">
+      <li>
+        휴대폰 번호를 입력한 후 참여하기 버튼을 터치하고, 스토어로 이동하면 앱을 다운로드한 후 실행해 주세요.
+      </li>
+      <li>
+        회원가입 완료 후 응모권 10장을 사용하시면 참여하신 계정으로
+        <strong>리워드가 지급됩니다.</strong>
+      </li>
+    </ol>
+
+    <ul class="event-guide__sub-list">
+      <li>
+        최초 회원가입 시 1회에 한 해 혜택이 지급되며, 탈퇴 후 재가입할 경우에는 혜택이 지급되지 않습니다.
+      </li>
+      <li>
+        이미 겸사겸사에 가입하신 이력이 있는 참여자는 이벤트 대상에서 제외됩니다.
+      </li>
+      <li>
+        당사 사정에 의해 사전 공지 없이 이벤트 내용이 변경되거나 조기 종료될 수 있습니다.
+      </li>
+      <li>
+        본 이벤트 페이지에서 참여하기 버튼을 터치한 후 24시간 이내 회원가입 및 응모권 10장 응모를 완료한 경우에만 리워드가 지급됩니다.
+      </li>
+      <li>
+        혜택 지급은 시스템 상황에 따라 지연될 수 있습니다.
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<div class="event-cta">
+  <button class="event-cta__btn" type="button" id="eventSubmitBtn" disabled>
+    참여하기
+  </button>
+</div>
+
+
+        <!-- <footer class="footer-sign footer-sign--v2 footer-sign--wo">
+        <div class="footer-sign__row">
+            <p class="footer-sign__brand">PINCRUX</p>
+            <p class="footer-sign__copy">Copyright PINCRUX. All rights reserved.</p>
+        </div>
+
+        <div class="footer-sign__links">
+            <a href="#" target="_blank" rel="noopener">이용문의</a>
+
+            <div class="footer-sign__policies" aria-label="부가 링크">
+            <a class="footer-sign__policy footer-sign__policy--strong" href="#" target="_blank" rel="noopener">서비스해지하기</a>
+            </div>
+        </div>
+        </footer> -->
+      </main>
+     </div>
+  </div>
+
+<!-- 참여완료팝업 -->
+<div class="event-modal" id="eventCompleteModal" aria-hidden="true">
+  <div class="event-modal__dim"></div>
+
+  <div
+    class="event-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="eventCompleteTitle"
+  >
+    <p class="event-modal__title" id="eventCompleteTitle">
+      이벤트 참여가 완료되었습니다.
+    </p>
+
+    <p class="event-modal__desc">
+      입력하신 휴대폰 번호로 이벤트<br />
+      참여가 완료되었습니다.<br />
+      리워드는 조건 충족 후 지급됩니다.
+    </p>
+
+<button class="event-modal__btn" type="button" data-modal-close>
+  완료
+</button>
+  </div>
+</div>
+
+<!-- 참여 완료 팝업 -->
+<div class="event-modal" id="eventCompleteModal" aria-hidden="true">
+  <div class="event-modal__dim"></div>
+
+  <div
+    class="event-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="eventCompleteTitle"
+  >
+    <p class="event-modal__title" id="eventCompleteTitle">
+      이벤트 참여가 완료되었습니다.
+    </p>
+
+    <p class="event-modal__desc">
+      입력하신 휴대폰 번호로 이벤트<br />
+      참여가 완료되었습니다.<br />
+      리워드는 조건 충족 후 지급됩니다.
+    </p>
+
+<button class="event-modal__btn" type="button" data-modal-close>
+  확인
+</button>
+  </div>
+</div>
+
+<!-- 이벤트 참여 불가 팝업 -->
+<div class="event-modal" id="eventErrorModal" aria-hidden="true">
+  <div class="event-modal__dim"></div>
+
+  <div
+    class="event-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="eventErrorTitle"
+  >
+    <p class="event-modal__title" id="eventErrorTitle">
+      이벤트 참여 대상이 아닙니다.
+    </p>
+
+    <p class="event-modal__desc">
+      본 이벤트는 신규 가입 회원만 참여할 수 있습니다.<br />
+      이미 가입하셨거나, 탈퇴 후 180일이 지나지<br />
+      않은 경우 참여가 제한됩니다.
+    </p>
+
+    <button class="event-modal__btn" type="button" data-modal-close>
+      확인
+    </button>
+  </div>
+</div>
+
+<script>
+  const phoneInput = document.querySelector(".event-phone__input");
+  const phoneBox = document.querySelector(".event-phone__input-box");
+
+  function formatPhoneNumber(value) {
+    const numbers = value.replace(/\D/g, "").slice(0, 11);
+
+    if (numbers.length <= 3) {
+      return numbers;
+    }
+
+    if (numbers.length <= 7) {
+      return numbers.replace(/(\d{3})(\d+)/, "$1-$2");
+    }
+
+    return numbers.replace(/(\d{3})(\d{4})(\d+)/, "$1-$2-$3");
+  }
+
+  function getPhoneNumbersOnly() {
+    return phoneInput.value.replace(/\D/g, "");
+  }
+
+  phoneInput.addEventListener("input", function () {
+    this.value = formatPhoneNumber(this.value);
+
+    if (this.value.length > 0) {
+      phoneBox.classList.add("is-filled");
+    } else {
+      phoneBox.classList.remove("is-filled");
+    }
+  });
+
+  const privacyAgree = document.querySelector("#privacyAgree");
+  const eventSubmitBtn = document.querySelector("#eventSubmitBtn");
+
+  privacyAgree.addEventListener("change", function () {
+    const isChecked = this.checked;
+
+    eventSubmitBtn.disabled = !isChecked;
+    eventSubmitBtn.classList.toggle("is-active", isChecked);
+  });
+
+  const eventCompleteModal = document.querySelector("#eventCompleteModal");
+  const eventErrorModal = document.querySelector("#eventErrorModal");
+  const modalCloseBtns = document.querySelectorAll("[data-modal-close]");
+
+  function openModal(modal) {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(modal) {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  function closeAllModals() {
+    document.querySelectorAll(".event-modal.is-open").forEach(function (modal) {
+      closeModal(modal);
+    });
+  }
+
+  eventSubmitBtn.addEventListener("click", function () {
+    if (this.disabled) return;
+
+    const phoneNumber = getPhoneNumbersOnly();
+
+    if (phoneNumber.length !== 11) {
+      openModal(eventErrorModal);
+      return;
+    }
+
+    openModal(eventCompleteModal);
+  });
+
+  modalCloseBtns.forEach(function (button) {
+    button.addEventListener("click", closeAllModals);
+  });
+</script>
+
+</body>
+
