@@ -243,7 +243,12 @@
 
 
 <div class="event-cta">
-  <button class="event-cta__btn" type="button" id="eventSubmitBtn" disabled>
+  <button
+    class="event-cta__btn"
+    type="button"
+    id="eventSubmitBtn"
+    aria-disabled="true"
+  >
     참여하기
   </button>
 </div>
@@ -346,85 +351,102 @@
 </div>
 
 <script>
-  const phoneInput = document.querySelector(".event-phone__input");
-  const phoneBox = document.querySelector(".event-phone__input-box");
+ const phoneInput = document.querySelector(".event-phone__input");
+const phoneBox = document.querySelector(".event-phone__input-box");
+const phoneSection = document.querySelector(".event-phone");
 
-  function formatPhoneNumber(value) {
-    const numbers = value.replace(/\D/g, "").slice(0, 11);
+function formatPhoneNumber(value) {
+  const numbers = value.replace(/\D/g, "").slice(0, 11);
 
-    if (numbers.length <= 3) {
-      return numbers;
-    }
-
-    if (numbers.length <= 7) {
-      return numbers.replace(/(\d{3})(\d+)/, "$1-$2");
-    }
-
-    return numbers.replace(/(\d{3})(\d{4})(\d+)/, "$1-$2-$3");
+  if (numbers.length <= 3) {
+    return numbers;
   }
 
-  function getPhoneNumbersOnly() {
-    return phoneInput.value.replace(/\D/g, "");
+  if (numbers.length <= 7) {
+    return numbers.replace(/(\d{3})(\d+)/, "$1-$2");
   }
 
-  phoneInput.addEventListener("input", function () {
-    this.value = formatPhoneNumber(this.value);
+  return numbers.replace(/(\d{3})(\d{4})(\d+)/, "$1-$2-$3");
+}
 
-    if (this.value.length > 0) {
-      phoneBox.classList.add("is-filled");
-    } else {
-      phoneBox.classList.remove("is-filled");
-    }
+function getPhoneNumbersOnly() {
+  return phoneInput.value.replace(/\D/g, "");
+}
+
+function scrollToPhoneSection() {
+  phoneSection.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
   });
 
-  const privacyAgree = document.querySelector("#privacyAgree");
-  const eventSubmitBtn = document.querySelector("#eventSubmitBtn");
+  setTimeout(function () {
+    phoneInput.focus();
+  }, 450);
+}
 
-  privacyAgree.addEventListener("change", function () {
-    const isChecked = this.checked;
+phoneInput.addEventListener("input", function () {
+  this.value = formatPhoneNumber(this.value);
 
-    eventSubmitBtn.disabled = !isChecked;
-    eventSubmitBtn.classList.toggle("is-active", isChecked);
+  if (this.value.length > 0) {
+    phoneBox.classList.add("is-filled");
+  } else {
+    phoneBox.classList.remove("is-filled");
+  }
+});
+
+const privacyAgree = document.querySelector("#privacyAgree");
+const eventSubmitBtn = document.querySelector("#eventSubmitBtn");
+
+privacyAgree.addEventListener("change", function () {
+  const isChecked = this.checked;
+
+  eventSubmitBtn.setAttribute("aria-disabled", String(!isChecked));
+  eventSubmitBtn.classList.toggle("is-active", isChecked);
+});
+
+const eventCompleteModal = document.querySelector("#eventCompleteModal");
+const eventErrorModal = document.querySelector("#eventErrorModal");
+const modalCloseBtns = document.querySelectorAll("[data-modal-close]");
+
+function openModal(modal) {
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+function closeAllModals() {
+  document.querySelectorAll(".event-modal.is-open").forEach(function (modal) {
+    closeModal(modal);
   });
+}
 
-  const eventCompleteModal = document.querySelector("#eventCompleteModal");
-  const eventErrorModal = document.querySelector("#eventErrorModal");
-  const modalCloseBtns = document.querySelectorAll("[data-modal-close]");
+eventSubmitBtn.addEventListener("click", function () {
+  const isChecked = privacyAgree.checked;
+  const phoneNumber = getPhoneNumbersOnly();
 
-  function openModal(modal) {
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+  // 체크 안 된 상태에서 참여하기 버튼을 누르면 휴대폰 입력 영역으로 이동
+  if (!isChecked) {
+    scrollToPhoneSection();
+    return;
   }
 
-  function closeModal(modal) {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+  // 체크는 했지만 번호가 없거나 11자리가 아니면 오류 팝업
+  if (phoneNumber.length !== 11) {
+    openModal(eventErrorModal);
+    return;
   }
 
-  function closeAllModals() {
-    document.querySelectorAll(".event-modal.is-open").forEach(function (modal) {
-      closeModal(modal);
-    });
-  }
+  // 체크 완료 + 번호 11자리 입력 완료 시 완료 팝업
+  openModal(eventCompleteModal);
+});
 
-  eventSubmitBtn.addEventListener("click", function () {
-    if (this.disabled) return;
-
-    const phoneNumber = getPhoneNumbersOnly();
-
-    if (phoneNumber.length !== 11) {
-      openModal(eventErrorModal);
-      return;
-    }
-
-    openModal(eventCompleteModal);
-  });
-
-  modalCloseBtns.forEach(function (button) {
-    button.addEventListener("click", closeAllModals);
-  });
+modalCloseBtns.forEach(function (button) {
+  button.addEventListener("click", closeAllModals);
+});
 </script>
 
 </body>
