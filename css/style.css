@@ -395,7 +395,7 @@
 }
 
 .event-phone__desc {
-  max-width: 18.75rem;
+  max-width: 320px;
   color: #727272;
   font-family: "Pretendard Variable", Pretendard, sans-serif;
   font-size: 1rem;
