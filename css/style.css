@@ -529,18 +529,21 @@
 }
 
 .event-privacy__row {
-  display: flex;
-  align-items: center;
-  gap: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  column-gap: 0;
+
   color: #282828;
   font-family: "Pretendard Variable", Pretendard, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.3125rem;
+  font-size: 14px;
+  line-height: 18px;
   letter-spacing: -0.01875rem;
+  text-align: left;
 }
 
 .event-privacy__row + .event-privacy__row {
-  margin-top: 0.625rem;
+  margin-top: 10px;
 }
 
 .event-privacy__row--top {
@@ -548,14 +551,17 @@
 }
 
 .event-privacy__row dt {
-  flex: 0 0 auto;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .event-privacy__row dd {
-  flex: 1;
   margin: 0;
+  min-width: 0;
   font-weight: 400;
+  text-align: left;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .event-privacy__row strong {
